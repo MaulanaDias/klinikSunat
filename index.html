@@ -133,12 +133,19 @@
       /* Hero Section */
       .hero {
         min-height: 100vh;
-        background: linear-gradient(135deg, #f9f7f0 0%, #eef3f0 100%);
+        /* background: linear-gradient(135deg, #f9f7f0 0%, #eef3f0 100%); */
         display: flex;
         align-items: center;
         padding-top: 100px;
         position: relative;
         overflow: hidden;
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("img/ge.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white;
       }
       .hero .container {
         display: grid;
@@ -147,7 +154,7 @@
         align-items: center;
       }
       .hero-badge {
-        background: rgba(44, 122, 110, 0.12);
+        background: rgba(240, 240, 240, 0.12);
         display: inline-block;
         padding: 6px 18px;
         border-radius: 40px;
@@ -161,15 +168,15 @@
         font-size: 3.2rem;
         line-height: 1.2;
         margin-bottom: 20px;
-        color: #1e2a3e;
+        color: white;
       }
       .hero-title span {
-        color: #2c7a6e;
+        color: #cbf754;
         border-bottom: 3px solid #cbd5e1;
       }
       .hero-desc {
         font-size: 1.1rem;
-        color: #475569;
+        color: wheat;
         margin-bottom: 32px;
         line-height: 1.5;
       }
@@ -195,13 +202,12 @@
         transform: translateY(-3px);
       }
       .btn-outline {
-        background: transparent;
+        background: #2c7a6e;
         border: 1.5px solid #2c7a6e;
         padding: 12px 34px;
         border-radius: 50px;
         font-weight: 600;
-        color: #2c7a6e;
-        transition: 0.2s;
+        color: white;
       }
       .btn-outline:hover {
         background: #2c7a6e10;
@@ -427,6 +433,49 @@
           font-size: 2.4rem;
         }
       }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 16px;
+        }
+
+        .hero-title {
+          font-size: 2rem;
+          line-height: 1.3;
+        }
+
+        .hero-desc {
+          font-size: 1rem;
+        }
+
+        .hero-buttons {
+          justify-content: center;
+        }
+
+        .btn-primary,
+        .btn-outline {
+          width: 100%;
+          text-align: center;
+        }
+
+        .about-stats {
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        .cta {
+          padding: 40px 20px;
+          border-radius: 24px;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .service-card {
+          padding: 24px 18px;
+        }
+      }
       /* animasi tambahan */
       [data-aos] {
         transition-timing-function: cubic-bezier(0.2, 0.9, 0.4, 1.1);
@@ -458,9 +507,9 @@
     <section id="home" class="hero">
       <div class="container">
         <div data-aos="fade-right" data-aos-duration="800">
-          <div class="hero-badge">
+          <!-- <div class="hero-badge">
             <i class="fas fa-star-of-life"></i> Terpercaya sejak 2015
-          </div>
+          </div> -->
           <h1 class="hero-title">
             Sunat Modern <span>Tanpa Rasa Takut</span><br />Metode Terkini &
             Higienis
@@ -471,12 +520,11 @@
             pulih.
           </p>
           <div class="hero-buttons">
-            <button
-              class="btn-outline"
-              onclick="alert('💬 Chat via WhatsApp : 08123456789')"
-            >
-              <i class="fab fa-whatsapp"></i> Konsultasi Gratis
-            </button>
+            <a href="https://wa.me/62895377380774">
+              <button class="btn-outline">
+                <i class="fab fa-whatsapp"></i> Konsultasi Gratis
+              </button>
+            </a>
           </div>
         </div>
         <div
@@ -485,11 +533,11 @@
           data-aos-duration="800"
         >
           <!-- Ilustrasi elegan SVG / Font Awesome style kombinasi -->
-          <img
+          <!-- <img
             src="img/b.jpg"
             alt="Ilustrasi sunat modern"
             style="width: 100%; max-width: 400px"
-          />
+          /> -->
           <!-- Alternatif ilustrasi medis & anak -->
         </div>
       </div>
@@ -525,7 +573,7 @@
             <h3>Sunat Anak & Dewasa</h3>
             <p>
               Pendekatan khusus usia, tim dokter anak & anestesi modern, tanpa
-              trauma.
+              trauma dengan harga mulai dari Rp700.000,-
             </p>
           </div>
         </div>
@@ -551,7 +599,7 @@
               infeksi tinggi, serta metode ‘painless circumcision’ yang membuat
               anak tetap tenang.
             </p>
-            <div class="about-stats">
+            <!-- <div class="about-stats">
               <div class="stat-item">
                 <h4>3500+</h4>
                 <p>Pasien</p>
@@ -564,15 +612,15 @@
                 <h4>4.9</h4>
                 <p>Rating Google</p>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="about-illustration" data-aos="fade-left">
             <img
-              src="img/c.jpg"
+              src="img/h.jpg"
               alt="dokter dan anak ilustrasi"
               onerror="
                 this.src =
-                  'https://cdn-icons-png.flaticon.com/512/4328/4328953.png'
+                  // 'https://cdn-icons-png.flaticon.com/512/4328/4328953.png'
               "
             />
           </div>
@@ -627,14 +675,11 @@
             Dapatkan konsultasi gratis dan jadwalkan pemeriksaan awal tanpa
             biaya.
           </p>
-          <button
-            class="btn-primary"
-            onclick="
-              alert('📞 Hubungi Admin: 021-1234-5678 atau WA 08123456789')
-            "
-          >
-            <i class="fab fa-whatsapp"></i> Hubungi Sekarang
-          </button>
+          <a href="https://wa.me/62895377380774">
+            <button class="btn-primary">
+              <i class="fab fa-whatsapp"></i> Hubungi Sekarang
+            </button>
+          </a>
         </div>
       </div>
     </section>
@@ -659,12 +704,22 @@
           </div>
           <div>
             <h4>Kontak</h4>
+            <p><i class="fas fa-phone-alt"></i> (021) 1234 5678</p>
+            <p><i class="fab fa-whatsapp"></i> 0812-3456-7890</p>
             <p>
               <i class="fas fa-map-marker-alt"></i> Jl. Medika No. 45, Jakarta
               Selatan
             </p>
-            <p><i class="fas fa-phone-alt"></i> (021) 1234 5678</p>
-            <p><i class="fab fa-whatsapp"></i> 0812-3456-7890</p>
+            <br />
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d126653.3360949916!2d110.2900083!3d-7.2503151!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708364ae77d21f%3A0x2e834f0454c75413!2sLes%20Matematika%20SD!5e0!3m2!1sen!2sid!4v1775692956111!5m2!1sen!2sid"
+              width="300"
+              height="240"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
           <div>
             <h4>Jam Operasional</h4>
@@ -674,7 +729,7 @@
           </div>
         </div>
         <div class="copyright">
-          &copy; 2025 SunatKlinik - Pelayanan Sunat Profesional. Hak Cipta
+          &copy; 2026 SunatKlinik - Pelayanan Sunat Profesional. Hak Cipta
           Dilindungi.
         </div>
       </div>
@@ -695,7 +750,12 @@
       menuToggle.addEventListener("click", () => {
         navLinks.classList.toggle("active");
       });
-
+      // HIDDEN MENU
+      document.addEventListener("click", function (e) {
+        if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+          navLinks.classList.remove("active");
+        }
+      });
       // Smooth scroll & navbar active
       const sections = document.querySelectorAll("section");
       const navItems = document.querySelectorAll(".nav-links a");
